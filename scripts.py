@@ -44,8 +44,7 @@ if response.status_code == 200:
     with open(csv_file_path, 'w', newline='', encoding='utf-8') as csvfile:
         csv_writer = csv.writer(csvfile)
 
-        csv_writer.writerow(['University Name'])
-        csv_writer.writerows(universities_names)
+        csv_writer.writerow([university for university in universities_names])
     
     print(f"Scraping completed. Data has been saved to '{csv_file_path}'.")
 else:
