@@ -42,7 +42,7 @@ if response.status_code == 200:
     csv_file_path = 'university_data.csv'
     
     with open(csv_file_path, 'w', newline='', encoding='utf-8') as csvfile:
-        csv_writer = csv.writer(csvfile)
+        csv_writer = csv.writer(csvfile, delimiter='|')
 
         csv_writer.writerow([university for university in universities_names])
     
