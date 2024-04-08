@@ -35,9 +35,9 @@ if response.status_code == 200:
     
     universities_names_with_single_chars = universities_names_with_esc_seq
 
-    universities_names = [university for university in universities_names_with_single_chars if len(university) != 1] # remove the single chars (it is in alphabetical order, hence why single chars exist)
+    universities_names = [university.strip() for university in universities_names_with_single_chars if len(university) > 4] # remove the single chars and niche separators (ex: UM) (it is in alphabetical order, hence why single chars exist)
 
-    print(universities_names)
+    print(*universities_names, sep='\n')
 
     csv_file_path = 'university_data.csv'
     
